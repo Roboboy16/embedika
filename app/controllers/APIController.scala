@@ -74,7 +74,7 @@ class APIController @Inject()(controllerComponents: ControllerComponents)
     logger.trace("Getting ammount of records")
     dataBase.run(cars.size.result).map { x =>
       logger.trace(s"Amount of records:${x}")
-      Ok(Json.toJson("records" -> x))
+      Ok(Json.obj("records" -> x))
     }
   }
 
